@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void){
+    char x, y;
+
+    scanf("%c\n", &x);
+
+    scanf("%c", &y);
+
+    if (x < y){
+        printf("%c eh o maior", y);
+    }
+    if (y < x){
+        printf("%c eh o maior", x);
+    }
+    if (x == y){
+        printf("%c e %c sao iguais", x, y);
+    }
+
+    return 0;
+}
