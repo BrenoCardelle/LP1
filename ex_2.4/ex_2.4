@@ -2,15 +2,15 @@
 
 int main(void){
 
-    float x, y;
+    float kph, mph;
 
-    scanf("%f", &x);
+    scanf("%f", &mph);
 
-    y = x * 1.6;
+    kph = mph * 1.6;
 
-    if (y < 80){
+    if (kph < 80){
         printf("Acelere");
-    } else if(y > 100){
+    } else if(kph > 100){
         printf("Reduza");
     } else {
         printf("Mantenha");
