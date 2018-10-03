@@ -1,14 +1,13 @@
 #include <stdio.h>
-#include <conio.h>
 
 int main(void){
 
     typedef struct dados_times{
         char nomes[30];
-        char vitorias;
-        char derrotas;
-        char empates;
-        char pontos;
+        int vitorias;
+        int derrotas;
+        int empates;
+        int pontos;
     }TIMES;
 
     TIMES time[20];
@@ -18,8 +17,7 @@ int main(void){
 
     for(i=0; i<=1; i++){
         printf("Entre com o nome do time: ");
-        fflush(stdin);
-        fgets(time[i].nomes, sizeof(time[i].nomes), stdin);
+        scanf("%s", &time[i].nomes);
         printf("Entre com o numero de vitorias do time: ");
         scanf("%d", &time[i].vitorias);
         printf("Entre com o numero de empates do time: ");
@@ -40,7 +38,9 @@ int main(void){
 
     printf("O time com mais pontos eh o %s com %d pontos.\n", time[mais].nomes, time[mais].pontos);
 
-    printf("%d, %d, %d, %d", time[1].vitorias, time[1].empates, time[1].derrotas, time[1].pontos);
+    printf("O time com menos pontos eh o %s com %d pontos.\n", time[menos].nomes, time[menos].pontos);
+
+    printf("%d, %d, %d, %d \n", time[1].vitorias, time[1].empates, time[1].derrotas, time[1].pontos);
 
 
     return 0;
