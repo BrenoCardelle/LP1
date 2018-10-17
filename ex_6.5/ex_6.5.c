@@ -1,3 +1,5 @@
+//edit
+
 #include <stdio.h>
 
 void strjoin(char* d, char* o1, char* o2){
