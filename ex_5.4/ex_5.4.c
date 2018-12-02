@@ -1,6 +1,14 @@
 #include <stdio.h>
 
-int troca();
+int troca(int* a, int* b){
+
+    int aux = 0;
+    aux = *a;
+    *a = *b;
+    *b = aux;
+
+}
+
 
 int main(){
 
@@ -13,14 +21,5 @@ int main(){
     printf("\nAntes da troca: %d : %d\n",x,y);
     troca(&x,&y);
     printf("\nDepois da troca: %d : %d\n",x,y);
-
-}
-
-int troca(int* a, int* b){
-
-    int aux = 0;
-    aux = *a;
-    *a = *b;
-    *b = aux;
 
 }
