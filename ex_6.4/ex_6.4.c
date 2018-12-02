@@ -11,7 +11,8 @@ int strlen2 (char* str){
 }
 
 int main(){
-	char str[]="abcde";
+	char str[50];
+	scanf("%s", str);
 	int len2 = strlen2(str);
 	printf("O tamanho da string eh: %d", len2);
 	return 0;
