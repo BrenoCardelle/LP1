@@ -4,9 +4,9 @@ int vs[15][20];
 
 void preenche(int l, int c) {
    int i,x;
-   for(i=0; i < c; i++) {
-      for(x = 0; x < l; x++) {
-        scanf("\n %d", &vs[x][i]);
+   for(i=0; i < l; i++) {
+      for(x = 0; x < c; x++) {
+        scanf("%d", &vs[x][i]);
       }
    }
 }
@@ -29,7 +29,8 @@ int main (void) {
 
   int li,co;
   float med=0;
-  scanf("%d \n %d", &li, &co);
+  scanf("%d", &li);
+  scanf("%d", &co);
   preenche(li, co);
   med = media(li, co);
   printf("Media = %.2f\n", med);
