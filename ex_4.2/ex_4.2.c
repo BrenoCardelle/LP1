@@ -10,28 +10,28 @@ int eh_primo(int v){
 	}
 	if (cont==2){
 		return 1;
-	}
+	} else { return 0;}
 }
 
 int todos_os_primos(int max){
 
-    int i, ver,cont;
-    int vet[max];
-    for(i=0; i<=max; i++){
-        ver = eh_primo(i);
-        vet[cont] = ver;
+    int i;
+    int cont = 0;
+    for(i=1; i<=max; i++){
+        if(eh_primo(i)==1){
+            printf("%d ", i);
+        }
         cont+=1;
     }
-    return *vet;
+    return 0;
 }
 
 
 int main(void){
-	int n, primos;
+	int n;
 	scanf("%d", &n);
-	primos = todos_os_primos(n);
-	printf("Os primos de 1 ate %d sao %d", n, primos);
-
+	printf("Os primos de 1 ate %d sao ", n);
+	todos_os_primos(n);
 
 	return 0;
 }
