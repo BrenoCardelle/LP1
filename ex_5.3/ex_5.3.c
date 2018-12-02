@@ -5,7 +5,7 @@ void compra(int* conta,int* conta2,int quant){
     int valor[quant];
     for(int i = 0; i < quant; i++){
 
-        printf("Digite o valor da compra:\n");
+        printf("Digite o valor da compra: ");
         scanf("%d,",&valor[i]);
 
     }
@@ -25,11 +25,11 @@ int main (){
     int minha_conta = 0;
     int minha_conta2 = 0;
     int quant = 0;
-    printf("Digite o valor da primeira conta:\n");
+    printf("Digite o valor da primeira conta: ");
     scanf("%d",&minha_conta);
-    printf("Digite o valor da segunda conta:\n");
+    printf("Digite o valor da segunda conta: ");
     scanf("%d,",&minha_conta2);
-    printf("Digite a quantidade de compras:\n");
+    printf("Digite a quantidade de compras: ");
     scanf("%d,",&quant);
 
     compra(&minha_conta,&minha_conta2,quant);
