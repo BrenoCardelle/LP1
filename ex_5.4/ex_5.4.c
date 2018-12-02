@@ -10,9 +10,9 @@ int main(){
     scanf("%d", &x);
     printf("Digite o segundo valor: ");
     scanf("%d", &y);
-    printf("Antes da troca: %d,%d",x,y);
+    printf("\nAntes da troca: %d : %d\n",x,y);
     troca(&x,&y);
-    printf("\nDepois da troca: %d,%d",x,y);
+    printf("\nDepois da troca: %d : %d\n",x,y);
 
 }
 
