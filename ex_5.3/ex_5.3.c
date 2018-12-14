@@ -1,15 +1,10 @@
 #include <stdio.h>
 
-void compra(int* conta,int* conta2,int quant){
+void compra(int* conta,int* conta2){
 
-    int valor[quant];
-    for(int i = 0; i < quant; i++){
+    int valor[5] = {100, 50, 80, 30, 20};
 
-        printf("Digite o valor da compra: ");
-        scanf("%d,",&valor[i]);
-
-    }
-    for(int j = 0; j < quant; j++){
+    for(int j = 0; j < 5; j++){
 
         if(*conta > *conta2){*conta = *conta - valor[j];}
         else{*conta2 = *conta2 - valor[j];}
@@ -24,14 +19,12 @@ int main (){
 
     int minha_conta = 0;
     int minha_conta2 = 0;
-    int quant = 0;
+    int quant = 5;
     printf("Digite o valor da primeira conta: ");
     scanf("%d",&minha_conta);
     printf("Digite o valor da segunda conta: ");
     scanf("%d,",&minha_conta2);
-    printf("Digite a quantidade de compras: ");
-    scanf("%d,",&quant);
 
-    compra(&minha_conta,&minha_conta2,quant);
+    compra(&minha_conta,&minha_conta2);
 
 }
