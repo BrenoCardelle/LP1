@@ -1,21 +1,20 @@
 #include <stdio.h>
 
-typedef struct Persona {
-	char nome[20];
-	int iniciativa;
-	int armadura;
-	int vida;
-
-}Persona;
-
 typedef struct Classe{
     int classe;
     union{
 	    int mago;
 	    int guerreiro;
 	};
-    Persona P;
 }Classe;
+
+typedef struct Persona {
+	char nome[20];
+	int iniciativa;
+	int armadura;
+	int vida;
+    Classe Cl;
+}Persona;
 
 void preenche(Persona *name){
 
@@ -29,31 +28,31 @@ void preenche(Persona *name){
 	scanf("%d", &(*name).vida);
 }
 
-void preenche2(Classe *C){
+void preenche2(Persona *P){
     printf("Entre com a classe do personagem, 1 para mago e 2 para guerreiro: ");
-    scanf("%d", &(*C).classe);
-    if((*C).classe == 1){
+    scanf("%d", &(*P).Cl.classe);
+    if((*P).Cl.classe == 1){
         printf("Entre com a qntd de mana: ");
-        scanf("%d", &(*C).mago);
-    } else if((*C).classe == 2) {
+        scanf("%d", &(*P).Cl.mago);
+    } else if((*P).Cl.classe == 2) {
         printf("Entre com a qntd de estamina: ");
-        scanf("%d", &(*C).guerreiro);
+        scanf("%d", &(*P).Cl.guerreiro);
     } else {
         printf("ERRO\n");
         return 0;
     }
-    preenche(&(*C).P);
+    preenche(&(*P));
 
 }
 
 int main(){
-    Classe C1;
-    preenche2(&C1);
-    if(C1.classe == 1){
-        printf("\nClasse: Mago\nMana: %d \nNome: %s \nIniciativa: %d \nArmadura: %d \nVida: %d", C1.mago, C1.P.nome, C1.P.iniciativa, C1.P.armadura, C1.P.vida);
-    } else if(C1.classe == 2) {
-        printf("\nClasse: Guerreiro\nEstamina: %d \nNome: %s \nIniciativa: %d \nArmadura: %d \nVida: %d", C1.guerreiro, C1.P.nome, C1.P.iniciativa, C1.P.armadura, C1.P.vida);
+    Persona P1;
+    preenche2(&P1);
+    if(P1.Cl.classe == 1){
+        printf("\nClasse: Mago\nMana: %d \nNome: %s \nIniciativa: %d \nArmadura: %d \nVida: %d", P1.Cl.mago, P1.nome, P1.iniciativa, P1.armadura, P1.vida);
+    } else if(P1.Cl.classe == 2) {
+        printf("\nClasse: Guerreiro\nEstamina: %d \nNome: %s \nIniciativa: %d \nArmadura: %d \nVida: %d", P1.Cl.guerreiro, P1.nome, P1.iniciativa, P1.armadura, P1.vida);
     } else { printf("Tente outra vez."); }
-
     return 0;
 }
+
