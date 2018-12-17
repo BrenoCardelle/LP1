@@ -1,16 +1,16 @@
 #include <stdio.h>
 
+typedef struct Classe{
+    char nome[20];
+}Classe;
+
 typedef struct Persona {
 	char nome[20];
 	int iniciativa;
 	int armadura;
 	int vida;
+	Classe C;
 }Persona;
-
-typedef struct Classe{
-    char nome[20];
-    Persona P;
-}Classe;
 
 void preenche(Persona *name){
 
@@ -24,17 +24,17 @@ void preenche(Persona *name){
 	scanf("%d", &(*name).vida);
 }
 
-void preenche2(Classe *C){
+void preenche2(Persona *P){
     printf("Entre com a classe do personagem: ");
-    scanf("%s", &(*C).nome);
-    preenche(&(*C).P);
+    scanf("%s", &(*P).C.nome);
+    preenche(&(*P));
 
 }
 
 int main(){
-    Classe C1;
+    Persona C1;
     preenche2(&C1);
-    printf("\nClasse: %s \nNome: %s \nIniciativa: %d \nArmadura: %d \nVida: %d", C1.nome, C1.P.nome, C1.P.iniciativa, C1.P.armadura, C1.P.vida);
+    printf("\nClasse: %s \nNome: %s \nIniciativa: %d \nArmadura: %d \nVida: %d", C1.C.nome, C1.nome, C1.iniciativa, C1.armadura, C1.vida);
 
     return 0;
 }
