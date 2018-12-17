@@ -25,3 +25,15 @@ int main(){
 	}
 	return 0;
 }
+
+ou 
+
+while(1){
+	Caixa* novo = (Caixa*) malloc(sizeof(Caixa));
+	if(cab == NULL){
+		cab = novo;
+	} else {
+		ant->prox = novo;
+	}
+	ant = novo;
+}
